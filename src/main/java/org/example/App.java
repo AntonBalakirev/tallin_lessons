@@ -1,9 +1,5 @@
 package org.example;
 
-import java.io.IOException;
-
-import static org.example.Utils.*;
-
 /**
  * Hello world!
  *

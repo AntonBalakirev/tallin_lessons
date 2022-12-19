@@ -1,4 +1,4 @@
-package org.example;
+package org.example.junit;
 
 public class Numbers {
     public static boolean isOdd(int number) {

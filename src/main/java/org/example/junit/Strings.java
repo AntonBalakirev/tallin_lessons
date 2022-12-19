@@ -1,4 +1,4 @@
-package org.example;
+package org.example.junit;
 
 public class Strings {
     public static boolean isBlank(String input) {

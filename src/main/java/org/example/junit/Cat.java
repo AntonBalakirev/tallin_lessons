@@ -1,7 +1,7 @@
-package org.example;
+package org.example.junit;
 
 public class Cat {
-    int age;
+    public int age;
     boolean hasTail;
 
     public String voice() {

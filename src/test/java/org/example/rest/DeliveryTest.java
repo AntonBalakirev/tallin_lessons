@@ -1,8 +1,8 @@
 package org.example.rest;
 
 import io.restassured.response.Response;
-import org.example.rest.api.LoginFunctions;
-import org.example.rest.api.TestOrderFunctions;
+import org.example.rest.api.deprecated.LoginFunctions;
+import org.example.rest.api.deprecated.TestOrderFunctions;
 import org.example.rest.dto.Order;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,6 +19,7 @@ public class DeliveryTest {
 
     @BeforeAll
     public static void setup(){
+        //авторизация
         headers.put("Content-type", "application/json");
 
         LoginFunctions loginFunctions = new LoginFunctions();

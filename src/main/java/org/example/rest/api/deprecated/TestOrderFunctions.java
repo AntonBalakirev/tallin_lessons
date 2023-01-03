@@ -1,4 +1,4 @@
-package org.example.rest.api;
+package org.example.rest.api.deprecated;
 
 import com.google.gson.Gson;
 import io.restassured.response.Response;

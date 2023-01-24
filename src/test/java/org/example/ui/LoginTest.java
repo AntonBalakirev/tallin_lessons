@@ -1,21 +1,9 @@
 package org.example.ui;
 
 import org.example.ui.pages.CreateOrderPage;
-import org.example.ui.pages.LoginPage;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-
-public class LoginTest {
-
-    LoginPage loginPage;
-
-    @BeforeEach
-    public void openStartPage(){
-        loginPage = open("http://51.250.6.164:3000/signin", LoginPage.class);
-    }
+public class LoginTest extends BaseTest{
 
     @Test
     public void loginExceptionTest(){

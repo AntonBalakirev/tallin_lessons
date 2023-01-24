@@ -9,7 +9,7 @@ import org.openqa.selenium.support.How;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class OrderStatusPage {
+public class OrderStatusPage extends BasePage {
 
     @FindBy(how = How.XPATH, using = "//h3[text() = 'Имя']/following-sibling::span")
     private SelenideElement nameTextField;

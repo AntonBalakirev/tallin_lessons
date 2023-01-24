@@ -1,22 +1,10 @@
 package org.example.ui;
 
 import org.example.ui.pages.CreateOrderPage;
-import org.example.ui.pages.LoginPage;
 import org.example.ui.pages.OrderStatusPage;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-
-public class E2ETest {
-
-    LoginPage loginPage;
-
-    @BeforeEach
-    public void openStartPage(){
-        loginPage = open("http://51.250.6.164:3000/signin", LoginPage.class);
-    }
+public class E2ETest extends BaseTest{
 
     @Test
     public void studentMainFlowTest(){

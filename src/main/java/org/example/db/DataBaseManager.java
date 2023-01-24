@@ -43,32 +43,25 @@ public class DataBaseManager {
         return dbConnection;
     }
 
-    public String executeSelect(){
+    public ResultSet selectOrderById(String orderId){
         ResultSet resultSet = null;
-        try {
-            String query = "select * from orders where id = 1958";
+        try(Connection dbConnection = getDbConnection()) {
+            String query = "select * from orders where id = " + orderId;
 
-            Connection dbConnection = getDbConnection();
             Statement statement = dbConnection.createStatement();
-
             resultSet = statement.executeQuery(query);
 
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString(1) + resultSet.getString(3) + resultSet.getString(4) + resultSet.getString(5));
-            }
-
 //            while (resultSet.next()) {
-//                String orderId = resultSet.getString("id");
-//                String status = resultSet.getString("status");
-//
-//                System.out.println(orderId);
-//                System.out.println(status);
+//                System.out.println(resultSet.getString(1) + "\n" +
+//                                resultSet.getString(3) + "\n" +
+//                                resultSet.getString(4) + "\n" +
+//                                resultSet.getString(5));
 //            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        return resultSet.toString();
+        return resultSet;
     }
 }

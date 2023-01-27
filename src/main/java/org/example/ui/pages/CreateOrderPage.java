@@ -3,6 +3,7 @@ package org.example.ui.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -47,6 +48,7 @@ public class CreateOrderPage extends BasePage {
     }
 
     //Создание заказа
+    @Step("Создать заказ с параметрами: имя={name}, телефон={phone}, комментарий={comment}")
     public CreateOrderPage createOrder(String name, String phone, String comment) {
         nameInput.setValue(name);
         phoneInput.setValue(phone);
@@ -56,6 +58,7 @@ public class CreateOrderPage extends BasePage {
     }
 
     //проверка текста сообщения об успешном создании заказа
+    @Step("Проверить текст: \"{textSuccess}\"")
     public void checkOrderCreatedText(String textSuccess) {
         popUpTextField
                 .shouldBe(Condition.visible)
@@ -70,6 +73,7 @@ public class CreateOrderPage extends BasePage {
     }
 
     //проверка статуса заказа по id
+    @Step("Проверить статус заказа с id={orderId}")
     public OrderStatusPage checkOrderStatusById(String orderId) {
         openStatusPopUpButton.click();
         searchByOrderIdInput.setValue(orderId);

@@ -6,6 +6,7 @@ import org.example.rest.api.TestOrderFunctions;
 import org.example.rest.dto.Order;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -28,6 +29,7 @@ public class DeliveryTest {
     }
 
     @Test
+    @Tag("orderLifecycle")
     public void orderLifecycleTest(){
         //создать заказ
         Order requestOrder = new Order(

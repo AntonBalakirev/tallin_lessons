@@ -2,6 +2,7 @@ package org.example.ui.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
@@ -21,6 +22,7 @@ public class OrderStatusPage extends BasePage {
     private SelenideElement commentTextField;
 
     //проверка статуса заказа (по значениям css и attribute элемента)
+    @Step("Проверка соответствия статуса={status}")
     public void checkOrderStatus(String status) {
         String xpathLocator = "//span[text() = '%s']";
         String attributeValue = $(By.xpath(String.format(xpathLocator, status)))
@@ -38,6 +40,7 @@ public class OrderStatusPage extends BasePage {
     }
 
     //проверка значений деталей заказа
+    @Step("Проверка параметров заказа: имя={name}, телефон={phone}, комментарий={comment}")
     public void checkOrderDetails(String name, String phone, String comment) {
         Assertions.assertEquals(name, nameTextField.getText());
         Assertions.assertEquals(phone, phoneTextField.getText());

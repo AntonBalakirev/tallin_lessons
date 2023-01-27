@@ -1,8 +1,10 @@
 package org.example.ui;
 
 import org.example.ui.pages.CreateOrderPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("login")
 public class LoginTest extends BaseTest{
 
     @Test

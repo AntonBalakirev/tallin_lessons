@@ -1,6 +1,7 @@
 package org.example.rest.api;
 
 import com.google.gson.Gson;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.example.rest.dto.Order;
 
@@ -40,6 +41,7 @@ public class TestOrderFunctions {
         return gson.fromJson(response.body().asString(), Order.class);
     }
 
+    @Step("Создание нового заказа")
     public Order postNewOrder(Order body, Map<String, String> headers) {
         Gson gson = new Gson();
         String stringRequestBody = gson.toJson(body);
@@ -55,6 +57,7 @@ public class TestOrderFunctions {
         return gson.fromJson(response.body().asString(), Order.class);
     }
 
+    @Step("Получение заказа по id = {orderId}")
     public Order getOrderById(Map<String,String> headers, String orderId){
         Gson gson = new Gson();
         Response responseOrderById =
@@ -67,6 +70,7 @@ public class TestOrderFunctions {
         return gson.fromJson(responseOrderById.body().asString(), Order.class);
     }
 
+    @Step("Удаление заказа по id = {orderId}")
     public Boolean deleteOrderById(Map<String,String> headers, String orderId){
         Response response =
                 given().

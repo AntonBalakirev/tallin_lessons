@@ -35,6 +35,7 @@ public class DriverManager {
                 Configuration.remote = "http://130.193.48.12:4444/wd/hub";
                 Configuration.browser = "chrome";
                 Configuration.browserSize = "1920x1080";
+                Configuration.browserVersion = "84.0";
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setCapability("enableVNC", true);
                 capabilities.setCapability("enableVideo", true);

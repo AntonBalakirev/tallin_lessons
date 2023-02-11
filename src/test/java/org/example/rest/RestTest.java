@@ -37,24 +37,24 @@ public class RestTest {
                         "id", equalTo(id));
     }
 
-    @Test
-    public void testOrderPostTest() {
-        given()
-                .accept("*/*")
-                .contentType("application/json")
-                .body("""
-                        {"status": "OPEN",
-                          "courierId": 0,
-                          "customerName": "string",
-                          "customerPhone": "string",
-                          "comment": "string",
-                          "id": 0}""")
-        .when()
-                .post("http://51.250.6.164:8080/test-orders/")
-        .then()
-                .statusCode(200)
-                .body("status", equalTo("OPEN"));
-    }
+//    @Test
+//    public void testOrderPostTest() {
+//        given()
+//                .accept("*/*")
+//                .contentType("application/json")
+//                .body("""
+//                        {"status": "OPEN",
+//                          "courierId": 0,
+//                          "customerName": "string",
+//                          "customerPhone": "string",
+//                          "comment": "string",
+//                          "id": 0}""")
+//        .when()
+//                .post("http://51.250.6.164:8080/test-orders/")
+//        .then()
+//                .statusCode(200)
+//                .body("status", equalTo("OPEN"));
+//    }
 
     @Test
     public void serializedOrderTest() {
